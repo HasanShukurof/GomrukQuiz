@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".ui.fragments.authfragment.SignupFragment">
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondConstraction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:padding="16dp"
+            android:background="@drawable/yello_background_drawable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvOptionOne">
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/clock_circle_drawable"
+                android:src="@drawable/clockvector"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+                app:layout_constraintStart_toStartOf="@+id/secondConstraction"
+                app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:indeterminate="false"
+                android:max="10"
+                android:minHeight="50dp"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@+id/tv_progress"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="@+id/secondConstraction" />
+
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/progress_text_drawable"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+                app:layout_constraintEnd_toEndOf="@+id/secondConstraction"
+                app:layout_constraintTop_toTopOf="@+id/progressBar"
+                tools:text="0 / 10" />
+
+            <TextView
+
+                android:id="@+id/tvQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/secondConstraction"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                tools:text="What country does this flag belong to?" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvOptionOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="start"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/secondConstraction"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/tvOptionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="start"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tvOptionOne"
+            tools:text="Google" />
+
+        <TextView
+            android:id="@+id/tvOptionThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="start"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tvOptionTwo"
+            tools:text="Android Inc." />
+
+        <TextView
+            android:id="@+id/tvOptionFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="start"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tvOptionThree"
+            tools:text="Nokia" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmit"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/orange_btn_backround"
+            android:text="Cavabla"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvOptionFour"
+            tools:ignore="TextContrastCheck"
+            tools:layout_editor_absoluteX="26dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
