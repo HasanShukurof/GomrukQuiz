@@ -1,4 +1,4 @@
-package com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment
+package com.hasanshukurov.gomrukquiz.ui.fragments
 
 import android.content.Intent
 import android.graphics.Color
@@ -15,12 +15,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.hasanshukurov.gomrukquiz.R
 import com.hasanshukurov.gomrukquiz.databinding.FragmentFourBinding
-import com.hasanshukurov.gomrukquiz.databinding.FragmentOneBinding
 import com.hasanshukurov.gomrukquiz.model.QuestionModel
 import com.hasanshukurov.gomrukquiz.ui.activities.ResultActivity
 import com.hasanshukurov.gomrukquiz.util.Constants
 import com.hasanshukurov.gomrukquiz.util.ListFour
-import com.hasanshukurov.gomrukquiz.util.ListTwo
 
 
 class FourFragment : Fragment(), View.OnClickListener {

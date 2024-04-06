@@ -1,4 +1,4 @@
-package com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment
+package com.hasanshukurov.gomrukquiz.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.hasanshukurov.gomrukquiz.R
 import com.hasanshukurov.gomrukquiz.adapter.QuizAdapter
 import com.hasanshukurov.gomrukquiz.databinding.FragmentHomeBinding
+import com.hasanshukurov.gomrukquiz.model.QuestionModel
 import com.hasanshukurov.gomrukquiz.model.RvModel
 import com.hasanshukurov.gomrukquiz.ui.activities.MainActivity
 import com.hasanshukurov.gomrukquiz.ui.activities.QuizActivity
@@ -49,6 +50,7 @@ class HomeFragment : Fragment() {
 
 
         val packetList = ArrayList<RvModel>()
+        val questionList = ArrayList<QuestionModel>()
 
         val packetOne = RvModel("Quiz - 1")
         val packetTwo = RvModel("Quiz - 2")

@@ -9,6 +9,4 @@ data class QuestionModel(
     val optionThree : String,
     val optionFour: String,
     val correctAnswer: Int
-
-
-)
+):java.io.Serializable

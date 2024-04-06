@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment.HomeFragment"
+        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -33,22 +33,26 @@
     </fragment>
     <fragment
         android:id="@+id/oneFragment"
-        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment.OneFragment"
+        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.OneFragment"
         android:label="fragment_one"
-        tools:layout="@layout/fragment_one" />
+        tools:layout="@layout/fragment_one" >
+        <argument
+            android:name="questionListArg"
+            app:argType="com.hasanshukurov.gomrukquiz.model.QuestionModel" />
+    </fragment>
     <fragment
         android:id="@+id/twoFragment"
-        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment.TwoFragment"
+        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.TwoFragment"
         android:label="fragment_two"
         tools:layout="@layout/fragment_two" />
     <fragment
         android:id="@+id/threeFragment"
-        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment.ThreeFragment"
+        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.ThreeFragment"
         android:label="fragment_three"
         tools:layout="@layout/fragment_three" />
     <fragment
         android:id="@+id/fourFragment"
-        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment.FourFragment"
+        android:name="com.hasanshukurov.gomrukquiz.ui.fragments.FourFragment"
         android:label="fragment_four"
         tools:layout="@layout/fragment_four" />
 </navigation>

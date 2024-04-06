@@ -1,4 +1,4 @@
-package com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment
+package com.hasanshukurov.gomrukquiz.ui.fragments
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,24 +9,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.hasanshukurov.gomrukquiz.R
-import com.hasanshukurov.gomrukquiz.databinding.FragmentOneBinding
+import com.hasanshukurov.gomrukquiz.databinding.FragmentThreeBinding
 import com.hasanshukurov.gomrukquiz.model.QuestionModel
 import com.hasanshukurov.gomrukquiz.ui.activities.ResultActivity
 import com.hasanshukurov.gomrukquiz.util.Constants
-import com.hasanshukurov.gomrukquiz.util.ListOne
+import com.hasanshukurov.gomrukquiz.util.ListThree
 
+class ThreeFragment : Fragment(), View.OnClickListener {
 
-class OneFragment : Fragment(), View.OnClickListener {
-
-    private var _binding: FragmentOneBinding? = null
-    private val binding: FragmentOneBinding get() = _binding!!
+    private var _binding: FragmentThreeBinding? = null
+    private val binding: FragmentThreeBinding get() = _binding!!
 
 
     private var progressBar: ProgressBar?=null
@@ -47,7 +44,6 @@ class OneFragment : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
     }
 
     override fun onCreateView(
@@ -55,12 +51,13 @@ class OneFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentOneBinding.inflate(inflater,container,false)
+        _binding = FragmentThreeBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
@@ -75,7 +72,7 @@ class OneFragment : Fragment(), View.OnClickListener {
         tvOptionThree = binding.tvOptionThree
         tvOptionFour = binding.tvOptionFour
         buttonSubmit = binding.btnSubmit
-        questionsList.addAll(ListOne.getListOne())
+        questionsList.addAll(ListThree.getListThree())
 
 
 
@@ -86,9 +83,7 @@ class OneFragment : Fragment(), View.OnClickListener {
         tvOptionThree?.setOnClickListener(this)
         tvOptionFour?.setOnClickListener(this)
         buttonSubmit?.setOnClickListener (this)
-
     }
-
 
     private fun setQuestion() {
 
@@ -134,6 +129,7 @@ class OneFragment : Fragment(), View.OnClickListener {
 
         }
     }
+
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
 
         defaultOptionsView()
@@ -170,6 +166,7 @@ class OneFragment : Fragment(), View.OnClickListener {
             }
         }
     }
+
     override fun onClick(view: View) {
         when(view.id){
             tvOptionOne?.id -> {
@@ -242,6 +239,11 @@ class OneFragment : Fragment(), View.OnClickListener {
             }
         }
     }
+
+
+
+
+
 
     override fun onDestroy() {
         super.onDestroy()

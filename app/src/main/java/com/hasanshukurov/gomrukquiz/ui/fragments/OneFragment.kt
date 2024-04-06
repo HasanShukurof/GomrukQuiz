@@ -1,4 +1,4 @@
-package com.hasanshukurov.gomrukquiz.ui.fragments.quizfragment
+package com.hasanshukurov.gomrukquiz.ui.fragments
 
 import android.content.Intent
 import android.graphics.Color
@@ -13,20 +13,19 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.fragment.navArgs
 import com.hasanshukurov.gomrukquiz.R
-import com.hasanshukurov.gomrukquiz.databinding.FragmentThreeBinding
-import com.hasanshukurov.gomrukquiz.databinding.FragmentTwoBinding
+import com.hasanshukurov.gomrukquiz.databinding.FragmentOneBinding
 import com.hasanshukurov.gomrukquiz.model.QuestionModel
 import com.hasanshukurov.gomrukquiz.ui.activities.ResultActivity
 import com.hasanshukurov.gomrukquiz.util.Constants
-import com.hasanshukurov.gomrukquiz.util.ListThree
-import com.hasanshukurov.gomrukquiz.util.ListTwo
+import com.hasanshukurov.gomrukquiz.util.ListOne
 
-class ThreeFragment : Fragment(), View.OnClickListener {
 
-    private var _binding: FragmentThreeBinding? = null
-    private val binding: FragmentThreeBinding get() = _binding!!
+class OneFragment : Fragment(), View.OnClickListener {
 
+    private var _binding: FragmentOneBinding? = null
+    private val binding: FragmentOneBinding get() = _binding!!
 
     private var progressBar: ProgressBar?=null
     private var tvProgress: TextView? = null
@@ -46,6 +45,7 @@ class ThreeFragment : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
     }
 
     override fun onCreateView(
@@ -53,13 +53,14 @@ class ThreeFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentThreeBinding.inflate(inflater,container,false)
+        _binding = FragmentOneBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var gelenArgs = arguments?.getSerializable("questionListArg") as ArrayList<QuestionModel>
 
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
@@ -74,7 +75,7 @@ class ThreeFragment : Fragment(), View.OnClickListener {
         tvOptionThree = binding.tvOptionThree
         tvOptionFour = binding.tvOptionFour
         buttonSubmit = binding.btnSubmit
-        questionsList.addAll(ListThree.getListThree())
+        questionsList.addAll(gelenArgs)
 
 
 
@@ -85,7 +86,9 @@ class ThreeFragment : Fragment(), View.OnClickListener {
         tvOptionThree?.setOnClickListener(this)
         tvOptionFour?.setOnClickListener(this)
         buttonSubmit?.setOnClickListener (this)
+
     }
+
 
     private fun setQuestion() {
 
@@ -131,7 +134,6 @@ class ThreeFragment : Fragment(), View.OnClickListener {
 
         }
     }
-
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
 
         defaultOptionsView()
@@ -168,7 +170,6 @@ class ThreeFragment : Fragment(), View.OnClickListener {
             }
         }
     }
-
     override fun onClick(view: View) {
         when(view.id){
             tvOptionOne?.id -> {
@@ -241,11 +242,6 @@ class ThreeFragment : Fragment(), View.OnClickListener {
             }
         }
     }
-
-
-
-
-
 
     override fun onDestroy() {
         super.onDestroy()
