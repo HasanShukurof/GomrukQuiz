@@ -16,9 +16,14 @@ import com.hasanshukurov.gomrukquiz.R
 import com.hasanshukurov.gomrukquiz.adapter.QuizAdapter
 import com.hasanshukurov.gomrukquiz.databinding.FragmentHomeBinding
 import com.hasanshukurov.gomrukquiz.model.QuestionModel
+import com.hasanshukurov.gomrukquiz.model.QuizModel
 import com.hasanshukurov.gomrukquiz.model.RvModel
 import com.hasanshukurov.gomrukquiz.ui.activities.MainActivity
 import com.hasanshukurov.gomrukquiz.ui.activities.QuizActivity
+import com.hasanshukurov.gomrukquiz.util.ListFour
+import com.hasanshukurov.gomrukquiz.util.ListOne
+import com.hasanshukurov.gomrukquiz.util.ListThree
+import com.hasanshukurov.gomrukquiz.util.ListTwo
 
 class HomeFragment : Fragment() {
 
@@ -50,43 +55,29 @@ class HomeFragment : Fragment() {
 
 
         val packetList = ArrayList<RvModel>()
-        val questionList = ArrayList<QuestionModel>()
 
         val packetOne = RvModel("Quiz - 1")
         val packetTwo = RvModel("Quiz - 2")
         val packetThree = RvModel("Quiz - 3")
         val packetFour = RvModel("Quiz - 4")
 
+
+
         packetList.add(packetOne)
         packetList.add(packetTwo)
         packetList.add(packetThree)
         packetList.add(packetFour)
 
+        val quizList = ArrayList<QuizModel>()
+        quizList.add(QuizModel("Quiz-1", ListOne.getListOne()))
+        quizList.add(QuizModel("Quiz-2", ListTwo.getListTwo()))
+        quizList.add(QuizModel("Quiz-3", ListThree.getListThree()))
+        quizList.add(QuizModel("Quiz-2", ListFour.getListFour()))
+
+
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
-        adapter = QuizAdapter(packetList)
+        adapter = QuizAdapter(quizList)
         binding.rv.adapter = adapter
-
-
-
-
-/*
-        binding.quizOneImageView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToOneFragment())
-        }
-
-        binding.quizTwoImageView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToTwoFragment())
-        }
-
-        binding.quizThreeImageView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToThreeFragment())
-        }
-
-        binding.quizFourImageView.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragment2ToFourFragment())
-        }
-
- */
 
 
     }
